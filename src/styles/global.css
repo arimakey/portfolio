@@ -84,6 +84,37 @@ ul {
 
 .icons {
 	font-size: 2.2rem;
+	transition: all 1s ease-out;
+}
+
+.icons:hover {
+	transform: translateY(-10px);
+}
+
+.grain {
+    position: relative;
+    background-color: #eee;
+    overflow: hidden;
+	
+	object-fit: cover;
+	
+	width: 239px;
+	height: 465px;
+
+	clip-path: polygon(0% 0%, 95% 0%, 100% 5%, 100%, 100%, 95%, 5%) ;
+}
+
+
+.grain:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+	background-color: var(--secundary-text);
+	mix-blend-mode: color;
 }
 
 .large__button {
@@ -109,7 +140,7 @@ ul {
 
 
 .header {
-	margin-top: 2rem;
+	margin-top: 4rem;
 }
 
 .header__title {
@@ -172,16 +203,14 @@ ul {
 }
 
 .technologies__image {
-	width: 239px;
-	height: 439px;
+	max-height: 100%;
 }
-
 
 .technologies__container__element {
 	border-width: 3px 0px 0px 0px;
 	border-color: var(--primary-color);
 	border-style: solid;
-
+	color: var(--primary-color);
 	display: flex;
 	justify-content: space-between;
 	padding: 1rem;
@@ -199,7 +228,7 @@ ul {
 
 .technologies__container__element--end {
 	margin: 0rem;
-	border: 2px solid var(--primary-color);
+	height: 1px;
 }
 
 .technologies__container__element__icons {
