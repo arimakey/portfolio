@@ -18,6 +18,7 @@
 	--primary-text: #2C1E0B;
 	--secundary-text: #4D391D;
 	--contrast-text: #FCEFDF;
+	--glow-color: #fcefdf;
 }
 
 @font-face {
@@ -157,26 +158,6 @@ ul {
 	color: var(--primary-text);
 }
 
-
-.header__title {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
-.header__title__subtitle {
-	justify-content: end;
-	text-align:end;
-}
-
-.header__title__subtitle__date {
-	color: var(--primary-color);
-	font-size: 3rem;
-	text-align: end;
-}
-.header__title_subtitle__profession {
-	font-size: 1rem;
-}
 
 .header__description__social {
 	width: 32rem;
@@ -323,4 +304,5 @@ ul {
 	font-size: 3rem;
 	font-weight: 500;
 	font-style: normal;
+	text-shadow: 0 0 10px var(--glow-color);
 }

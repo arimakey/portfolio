@@ -1,0 +1,64 @@
+<section>
+    <div class="header__title">
+        <h1 class="header__title__name">ARIMA</h1>
+        <div class="header__title_subtitle">
+            <p class="header__title__subtitle__date">2024</p>
+            <h2 class="header__title_subtitle__profession">software engineering</h2>
+        </div>
+    </div>
+    <hr>
+</section>
+
+<style>    
+
+.header__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header__title__name {
+    font-size: 12rem;
+}
+
+.header__title__subtitle {
+    justify-content: end;
+    text-align:end;
+}
+
+.header__title__subtitle__date {
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-align: end;
+}
+.header__title_subtitle__profession {
+    font-size: 10rem;
+}
+
+
+@media only screen and (min-width: 480px) {
+    .header__title__name {
+        font-size: 6rem;
+    }
+
+    .header__title__subtitle__date {
+        font-size: 4rem;
+    }
+
+    .header__title_subtitle__profession {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .header__title__name {
+        font-size: 5rem;
+    }
+
+    .header__title_subtitle__profession {
+        font-size: 1rem;
+    }
+}
+
+    
+</style>
