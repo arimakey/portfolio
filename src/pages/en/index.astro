@@ -1,6 +1,4 @@
 ---
-import Footer from "../../components/Footer.astro"
-import Header from "../../components/Header.astro"
 import Layout from "../../layouts/Layout.astro"
 import "../../styles/global.css"
 ---
@@ -10,7 +8,7 @@ import "../../styles/global.css"
             <article class="header__description__about">
                 <p>Hello! I'm Arima, a passionate software engineering student with a particular interest in the world of ethical hacking and computer security. My goal is to explore the complexities of cyberspace and contribute to a safer and more robust online environment.</p>
             </article>
-            <nav class="header__description__social">
+            <div class="header__description__social">
                 <a href="https://www.instagram.com/arimakey" class="large__button" target="_blank">
                     <ion-icon name="logo-instagram"></ion-icon>
                     Instagram
@@ -19,8 +17,52 @@ import "../../styles/global.css"
                     <ion-icon name="logo-github"></ion-icon>
                     Github
                 </a>
-            </nav>
-        </div>        
+            </div>
+        </div>
+        <style>
+            .header__description {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 2rem;
+            }
+
+            .header__description__social {
+                width: 64rem;
+                display: flex;
+                flex-direction: row;
+                gap: 12px;
+                width: 100%;
+            }
+
+            .header__description__about {
+                color: var(--primary-color);
+                padding-right: 0rem;
+            }
+
+            @media only screen and (min-width: 480px) {
+                .header__description {
+                    gap: 1rem;
+                }
+
+                .header__description__social {
+                    width: 100%;
+                    flex-direction: column;
+                }
+
+                .header__description__about {
+                    padding-right: 1rem;
+                }
+            }
+
+            @media only screen and (min-width: 768px) {
+                .header__description {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            }
+        </style>     
     </header>
     <section class="technologies">
         <div class="technologies__container">
@@ -80,7 +122,104 @@ import "../../styles/global.css"
         <div class="color-filter technologies__image__container">
             <img class="technologies__image image" src="https://i.ibb.co/pwsmPFT/image.png" alt="image">
         </div>
+
+        <style>
+        .technologies {
+            margin: 6rem 0rem;
+        }
+
+        .technologies__title {
+            margin-bottom: 0rem;
+            width: 60%;
+            color: var(--contrast-text);
+            background-color: var(--primary-color);
+            text-align: center;
+            padding: 0.5rem 0rem;
+        }
+
+        .technologies__container {
+            width: 100%;
+        }
+
+        .technologies__image__container {
+            display: none;
+        }
+
+        .technologies__container__element {
+            border-width: 3px 0px 0px 0px;
+            border-color: var(--primary-color);
+            border-style: solid;
+            color: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+
+        .technologies__container__element--right {
+            border-width: 3px 3px 0px 0px;
+        }
+
+        .technologies__container__element--left {
+            flex-direction: row-reverse;
+            text-align: end;
+            border-width: 3px 0px 0px 3px;
+        }
+
+        .technologies__container__element--end {
+            margin: 0rem;
+            height: 1px;
+        }
+
+        .technologies__container__element__icons {
+            height: auto;
+            align-items: center;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .technologies__container__element__title {
+            font-size: 1.6rem;
+            font-family: "Rosario", sans-serif;
+            font-style: italic;
+        }
+
+        .technologies__container__element__title--effect {
+            font-family: "M PLUS Rounded 1c", sans-serif;
+            font-style: normal;
+            font-weight: 900;
+        }
+
+
+        @media only screen and (min-width: 480px) {
+            
+        }
+
+        @media only screen and (min-width: 768px) {
+            .technologies {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem
+            }
+            .technologies__image__container {
+                display: block;
+                width: 239px;
+                height: 465px;
+                overflow: hidden;
+            }
+
+            .technologies__image {
+                max-height: 100%;
+                overflow: hidden;
+                clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100%, 100%, 80%, 20%) ;
+            }
+
+            .technologies__container {
+                width: 80%;
+            }
+        }
+        </style>
     </section>
+
     <section class="proyects">
         <h3 class="proyects__title">
             Proyects
@@ -104,7 +243,6 @@ import "../../styles/global.css"
                 </div>
                 <h4 class="proyect_content_element__title">Peertok</h4>
             </article>
-            
         </div>
     </section>
 </Layout>
