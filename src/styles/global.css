@@ -159,7 +159,9 @@ ul {
 	color: var(--primary-text);
 }
 
-
+.image:hover {
+	transform: scale(1.10);
+}
 
 
 
