@@ -56,6 +56,10 @@ import "../../styles/global.css"
             }
 
             @media only screen and (min-width: 768px) {
+                .header__description__social {
+                    width: 32rem;
+
+                }
                 .header__description {
                     display: flex;
                     flex-direction: row;
@@ -130,9 +134,10 @@ import "../../styles/global.css"
 
         .technologies__title {
             margin-bottom: 0rem;
-            width: 60%;
+            width: 80%;
             color: var(--contrast-text);
             background-color: var(--primary-color);
+            font-size: 1rem;
             text-align: center;
             padding: 0.5rem 0rem;
         }
@@ -174,11 +179,12 @@ import "../../styles/global.css"
             height: auto;
             align-items: center;
             display: flex;
-            gap: 1rem;
+            gap: 0.5rem;
+            font-size: 10px;
         }
 
         .technologies__container__element__title {
-            font-size: 1.6rem;
+            font-size: 1rem;
             font-family: "Rosario", sans-serif;
             font-style: italic;
         }
@@ -188,10 +194,25 @@ import "../../styles/global.css"
             font-style: normal;
             font-weight: 900;
         }
+        .icons {
+            font-size: 1.6rem;
+        }
 
 
         @media only screen and (min-width: 480px) {
-            
+            .technologies__title {
+                width: 60%;
+                font-size: 1rem;
+            }
+            .technologies__container__element__title {
+                font-size: 1.5rem;
+            }
+            .technologies__container__element__icons {
+                gap: 1rem;
+            }
+            .icons {
+                font-size: 2rem;
+            }
         }
 
         @media only screen and (min-width: 768px) {
@@ -200,6 +221,15 @@ import "../../styles/global.css"
                 flex-direction: row;
                 gap: 1rem
             }
+            .technologies__title {
+                padding: 0.8rem;
+                width: 60%;
+                font-size: 1.5rem;
+            }
+            .technologies__container__element__title {
+                font-size: 1.5rem;
+            }
+
             .technologies__image__container {
                 display: block;
                 width: 239px;
@@ -215,6 +245,9 @@ import "../../styles/global.css"
 
             .technologies__container {
                 width: 80%;
+            }
+            .icons {
+                font-size: 2.5rem;
             }
         }
         </style>
@@ -244,5 +277,57 @@ import "../../styles/global.css"
                 <h4 class="proyect_content_element__title">Peertok</h4>
             </article>
         </div>
+        <style>
+            .proyects__title {
+                margin-bottom: 0rem;
+                width: 100%;
+                color: var(--contrast-text);
+                background-color: var(--primary-color);
+                text-align: center;
+                padding: 1rem 0rem;
+            }
+
+            .proyects_content {
+                width: calc(100% - 1rem);
+                
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 55% 45%;
+                gap: 1rem;
+                justify-items: stretch;
+                align-items: stretch;
+                
+                height: 35rem;
+            }
+            .proyect_content_element {
+                position: relative;
+            }
+
+            .proyect_content_element__image{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            .image:hover {
+                transform: scale(1.10);
+            }
+
+            .proyect_content_element--first {
+                grid-row: span 2;
+            }
+
+            .proyect_content_element__title {
+                position: absolute;
+                bottom: 1rem;
+                right: 1rem;
+                color: var(--contrast-text);
+                font-family: "Libre Barcode 39 Text", system-ui;
+                font-size: 3rem;
+                font-weight: 500;
+                font-style: normal;
+                text-shadow: 0 0 10px var(--glow-color);
+            }
+        </style>
     </section>
 </Layout>
