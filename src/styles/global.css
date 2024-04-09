@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rosario:ital,wght@0,300..700;1,300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap');
 
 * {
     margin: 0;
@@ -22,8 +23,11 @@
 @font-face {
 	font-family: 'Nova Round';
 	src: url('https://fonts.googleapis.com/css2?family=Nombre+de+la+Fuente&display=swap');
-	font-weight: 400;
-	font-style: normal;
+}
+
+@font-face {
+	font-family: "Libre Barcode 39 Text";
+	src: url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap');
 }
 
 @font-face {
@@ -48,9 +52,9 @@ body {
 	font-size: 20px;
 
 	max-width: 1200px;
-	margin: 0 auto;
 	padding: 3em 1em;
 	padding: 0 20px;
+	margin: 4rem auto;
 }
 
 
@@ -60,6 +64,7 @@ h1 {
 
 h3 {
 	font-size: 1.5rem;
+	font-weight: 300;
 	letter-spacing: 1rem;
 	color: var(--contrast-text)
 }
@@ -82,6 +87,25 @@ ul {
 	list-style-type: none;	
 }
 
+.image {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+	transition: transform 0.3s ease;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	font-size: large;
+	height: 3rem;
+	color: var(--contrast-text);
+	background-color: var(--primary-color);
+}
+
 .icons {
 	font-size: 2.2rem;
 	transition: all 1s ease-out;
@@ -91,35 +115,30 @@ ul {
 	transform: translateY(-10px);
 }
 
-.grain {
+.color-filter {
     position: relative;
-    background-color: #eee;
-    overflow: hidden;
-	
 	object-fit: cover;
-	
-	width: 239px;
-	height: 465px;
-
-	clip-path: polygon(0% 0%, 95% 0%, 100% 5%, 100%, 100%, 95%, 5%) ;
 }
 
 
-.grain:before {
+.color-filter::before {
+	pointer-events: none;
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-
 	background-color: var(--secundary-text);
 	mix-blend-mode: color;
+	z-index: 1;
 }
+
 
 .large__button {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	padding: 0.4rem 1rem;
 	gap: 0.3rem;
 
@@ -138,10 +157,6 @@ ul {
 	color: var(--primary-text);
 }
 
-
-.header {
-	margin-top: 4rem;
-}
 
 .header__title {
 	display: flex;
@@ -202,9 +217,19 @@ ul {
 	width: 80%;
 }
 
+.technologies__image__container {
+	width: 239px;
+	height: 465px;
+	overflow: hidden;
+}
+
 .technologies__image {
 	max-height: 100%;
+	overflow: hidden;
+	clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100%, 100%, 80%, 20%) ;
 }
+
+
 
 .technologies__container__element {
 	border-width: 3px 0px 0px 0px;
@@ -248,4 +273,54 @@ ul {
 	font-family: "M PLUS Rounded 1c", sans-serif;
 	font-style: normal;
 	font-weight: 900;
+}
+
+.proyects__title {
+	margin-bottom: 0rem;
+	width: 100%;
+	color: var(--contrast-text);
+	background-color: var(--primary-color);
+	text-align: center;
+	padding: 1rem 0rem;
+}
+
+.proyects_content {
+	width: calc(100% - 1rem);
+	
+	display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 55% 45%;
+    gap: 1rem;
+    justify-items: stretch;
+    align-items: stretch;
+	
+	height: 35rem;
+}
+.proyect_content_element {
+	position: relative;
+}
+
+.proyect_content_element__image{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.image:hover {
+	transform: scale(1.10);
+}
+
+.proyect_content_element--first {
+	grid-row: span 2;
+}
+
+.proyect_content_element__title {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	color: var(--contrast-text);
+	font-family: "Libre Barcode 39 Text", system-ui;
+	font-size: 3rem;
+	font-weight: 500;
+	font-style: normal;
 }
