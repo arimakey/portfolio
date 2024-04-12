@@ -13,6 +13,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │   ├── components/
 │   ├── content/
 │   ├── layouts/
+│   ├── resources/
 │   └── pages/
 │       ├── en/
 │       └── es/
