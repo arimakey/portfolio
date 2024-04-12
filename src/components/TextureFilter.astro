@@ -1,11 +1,12 @@
 ---
+    import { Image } from "astro:assets";
     const { src, alt} = Astro.props;
 ---
 
 
 <div class="texture-filter">
     <div class="color-filter">
-        <img class="image" src={src} alt={alt}>
+        <Image class="image" src={src} alt="">
     </div>
 </div>
 
