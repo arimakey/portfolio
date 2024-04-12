@@ -2,6 +2,12 @@
 import TextureFilter from "../../components/TextureFilter.astro"
 import Layout from "../../layouts/Layout.astro"
 import "../../styles/global.css"
+import first_project from '../../resources/images/peertok.png'
+import second_project from '../../resources/images/soon_proyect_0.gif'
+import third_project from '../../resources/images/soon_proyect_1.gif'
+
+import technologies_image from '../../resources/images/technologies_image.png'
+
 ---
 <Layout title="Arimakey" description="Portfolio page">
     <header class="header">
@@ -125,7 +131,7 @@ import "../../styles/global.css"
             <hr class="technologies__container__element--end">
         </div>
         <div class="technologies__image__container">
-            <TextureFilter src="https://i.ibb.co/pwsmPFT/image.png" />
+            <TextureFilter src={technologies_image.src} />
         </div>
 
         <style>
@@ -275,21 +281,21 @@ import "../../styles/global.css"
         <div class="proyects_content">
             <article class="proyect_content_element proyect_content_element--first">
                 <div class=" proyect_content_element__image">
-                    <TextureFilter src="https://i.ibb.co/TR39gh7/68shots-so.png"/>
+                    <TextureFilter src={first_project.src}/>
                 </div>
                 <h4 class="proyect_content_element__title">Peertok</h4>
             </article>
             <article class="proyect_content_element proyect_content_element--second">
                 <div class=" proyect_content_element__image">
-                    <TextureFilter src="https://cdn.vox-cdn.com/thumbor/UixJG8lZQVN9qI6pBcxprYOsWeA=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/68876614/26355890.6.jpeg"/>
+                    <TextureFilter src={second_project.src}/>
                 </div>
-                <h4 class="proyect_content_element__title">Peertok</h4>
+                <h4 class="proyect_content_element__title">SOON</h4>
             </article>
             <article class="proyect_content_element proyect_content_element--third">
                 <div class=" proyect_content_element__image">
-                    <TextureFilter src="https://img.asmedia.epimg.net/resizer/v2/X2ZLOYGYGRH2BA5JRTF3NUU3CY.jpg?auth=a082e82cf56097935efc3cf148e8fbf039d460c4f909f5c933623ed3891361df&width=360&height=203&smart=true"/>
+                    <TextureFilter src={third_project.src}/>
                 </div>
-                <h4 class="proyect_content_element__title">Peertok</h4>
+                <h4 class="proyect_content_element__title">SOON</h4>
             </article>
         </div>
         <style>
