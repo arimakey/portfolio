@@ -1,0 +1,68 @@
+---
+    const { src, alt} = Astro.props;
+---
+
+
+<div class="texture-filter">
+    <div class="color-filter">
+        <img class="image" src={src} alt={alt}>
+    </div>
+</div>
+
+<style>
+    .texture-filter {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .texture-filter::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background-image: url('/public/grain_texture.webp');
+        background-repeat: repeat;
+        background-position: center;
+        background-size: auto;
+
+        pointer-events: none;
+        content: '';
+        
+        mix-blend-mode: soft-light  ;
+        opacity: 40%;
+        z-index: 1;
+    }
+    
+    .color-filter {
+        width: 100%;
+        height: 100%;
+
+        position: relative;
+        object-fit: cover;
+    }
+
+    .color-filter::before {
+        width: 100%;
+        height: 100%;
+
+        pointer-events: none;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--secundary-text);
+        mix-blend-mode: color;
+        z-index: 1;
+    }
+    .image {
+        height: 100%;
+        width: 100%;
+
+        object-fit: cover;
+    }
+
+    
+</style>

@@ -88,12 +88,7 @@ ul {
 	list-style-type: none;	
 }
 
-.image {
-	object-fit: cover;
-	height: 100%;
-	width: 100%;
-	transition: transform 0.3s ease;
-}
+
 
 .button {
 	display: flex;
@@ -114,25 +109,6 @@ ul {
 
 .icons:hover {
 	transform: translateY(-10px);
-}
-
-.color-filter {
-    position: relative;
-	object-fit: cover;
-}
-
-
-.color-filter::before {
-	pointer-events: none;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-	background-color: var(--secundary-text);
-	mix-blend-mode: color;
-	z-index: 1;
 }
 
 
@@ -158,11 +134,3 @@ ul {
 	background: none;
 	color: var(--primary-text);
 }
-
-.image:hover {
-	transform: scale(1.10);
-}
-
-
-
-
