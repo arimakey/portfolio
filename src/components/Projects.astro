@@ -1,20 +1,20 @@
 ---
-import first_project from '../resources/images/peertok.png'
-import second_project from '../resources/images/soon_proyect_0.gif'
-import third_project from '../resources/images/soon_proyect_1.gif'
+import { getCollection } from 'astro:content';
+
 import Project from './Project.astro'
 
+const projects = (await getCollection('projects'));
 ---
 <section class="proyects">
     <h3 class="proyects__title">
         Projects
     </h3>
-    <div class="proyects_content">
-        <div class="proyect_content_element--first">
-            <Project image={first_project}  title="astro" />
-        </div>
-        <Project image={second_project}  title="none" />
-        <Project image={third_project}  title="none" />
+    <div class="proyects__content">
+        {
+            projects.map(project => (
+                <Project image={project.data.heroImage}  title={project.data.title} slug={`projects/${project.slug}`}/>
+            ))
+        }
     </div>
 </section>
 
@@ -29,7 +29,7 @@ import Project from './Project.astro'
         padding: 0.5rem 0rem;
     }
 
-    .proyects_content {
+    .proyects__content {
         width: 100%;
         
         display: grid;
@@ -48,6 +48,7 @@ import Project from './Project.astro'
         transition: opacity 0.25s ease-out;
         opacity: 0;
     }
+    
 
 
     @media only screen and (min-width: 480px) {
@@ -61,7 +62,7 @@ import Project from './Project.astro'
             font-size: 1.5rem;
             padding: 1rem 0rem;
         }
-        .proyects_content {
+        .proyects__content {
             width: calc(100% - 0.15rem);
             grid-template-columns: 50% 50%;
             grid-template-rows: 55% 45%;
@@ -69,9 +70,6 @@ import Project from './Project.astro'
             justify-items: stretch;
             align-items: stretch;
             height: 35rem;
-        }
-        .proyect_content_element--first {
-            grid-row: span 2;
         }
     }
 </style>
