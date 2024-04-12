@@ -1,12 +1,12 @@
 ---
-import TextureFilter from "../../components/TextureFilter.astro"
-import Layout from "../../layouts/Layout.astro"
-import "../../styles/global.css"
-import first_project from '../../resources/images/peertok.png'
-import second_project from '../../resources/images/soon_proyect_0.gif'
-import third_project from '../../resources/images/soon_proyect_1.gif'
+import TextureFilter from '../../components/TextureFilter.astro'
+import Layout from '../../layouts/Layout.astro'
+import '../../styles/global.css'
+
 
 import technologies_image from '../../resources/images/technologies_image.png'
+
+import Projects from '../../components/Projects.astro'
 
 ---
 <Layout title="Arimakey" description="Portfolio page">
@@ -16,11 +16,11 @@ import technologies_image from '../../resources/images/technologies_image.png'
                 <p>Hello! I'm Arima, a passionate software engineering student with a particular interest in the world of ethical hacking and computer security. My goal is to explore the complexities of cyberspace and contribute to a safer and more robust online environment.</p>
             </article>
             <div class="header__description__social">
-                <a href="https://www.instagram.com/arimakey" class="large__button" target="_blank">
+                <a href="https://www.instagram.com/arima_key" class="large__button" target="_blank">
                     <ion-icon name="logo-instagram"></ion-icon>
                     Instagram
                 </a>
-                <a href="https://github.com/arimakey" class="large__button large__button--transparent" target="_blank">
+                <a href="https://github.com/arima_key" class="large__button large__button--transparent" target="_blank">
                     <ion-icon name="logo-github"></ion-icon>
                     Github
                 </a>
@@ -278,102 +278,5 @@ import technologies_image from '../../resources/images/technologies_image.png'
         }
         </style>
     </section>
-
-    <section class="proyects">
-        <h3 class="proyects__title">
-            Projects
-        </h3>
-        <div class="proyects_content">
-            <article class="proyect_content_element proyect_content_element--first">
-                <div class=" proyect_content_element__image">
-                    <TextureFilter src={first_project}/>
-                </div>
-                <h4 class="proyect_content_element__title">Peertok</h4>
-            </article>
-            <article class="proyect_content_element proyect_content_element--second">
-                <div class=" proyect_content_element__image">
-                    <TextureFilter src={second_project}/>
-                </div>
-                <h4 class="proyect_content_element__title">SOON</h4>
-            </article>
-            <article class="proyect_content_element proyect_content_element--third">
-                <div class=" proyect_content_element__image">
-                    <TextureFilter src={third_project}/>
-                </div>
-                <h4 class="proyect_content_element__title">SOON</h4>
-            </article>
-        </div>
-        <style>
-            .proyects__title {
-                margin-bottom: 0rem;
-                width: 100%;
-                color: var(--contrast-text);
-                background-color: var(--primary-color);
-                text-align: center;
-                font-size: 1rem;
-                padding: 0.5rem 0rem;
-            }
-
-            .proyects_content {
-                width: 100%;
-                
-                display: grid;
-                grid-template-columns: 100%;
-                grid-template-rows: 40% 35% 25%;
-                gap: 1rem;
-                justify-items: stretch;
-                align-items: stretch;
-                
-                height: 60rem;
-            }
-
-    
-            .proyect_content_element {
-                position: relative;
-            }
-
-            .proyect_content_element__image{
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-            }
-
-            .proyect_content_element__title {
-                position: absolute;
-                bottom: 1rem;
-                right: 1rem;
-                color: var(--contrast-text);
-                font-family: "Libre Barcode 39 Text", system-ui;
-                font-size: 3rem;
-                font-weight: 500;
-                font-style: normal;
-                text-shadow: 0 0 10px var(--glow-color);
-            }
-
-            @media only screen and (min-width: 480px) {
-                .proyects__title {
-                    font-size: 1.5rem;
-                }
-            }
-
-            @media only screen and (min-width: 768px) {
-                .proyects__title {
-                    font-size: 1.5rem;
-                    padding: 1rem 0rem;
-                }
-                .proyects_content {
-                    width: calc(100% - 0.15rem);
-                    grid-template-columns: 50% 50%;
-                    grid-template-rows: 55% 45%;
-                    gap: 0.2rem;
-                    justify-items: stretch;
-                    align-items: stretch;
-                    height: 35rem;
-                }
-                .proyect_content_element--first {
-                    grid-row: span 2;
-                }
-            }
-        </style>
-    </section>
+    <Projects />
 </Layout>

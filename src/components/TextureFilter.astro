@@ -5,7 +5,7 @@
 
 
 <div class="texture-filter">
-    <div class="color-filter">
+    <div class="color-filter gradient-background">
         <Image class="image" src={src} alt="">
     </div>
 </div>
@@ -32,9 +32,9 @@
         pointer-events: none;
         content: '';
         
-        mix-blend-mode: soft-light  ;
+        mix-blend-mode: soft-light ;
         opacity: 40%;
-        z-index: 1;
+        z-index: 10;
     }
     
     .color-filter {
@@ -43,6 +43,7 @@
 
         position: relative;
         object-fit: cover;
+        
     }
 
     .color-filter::before {
@@ -65,5 +66,4 @@
         object-fit: cover;
     }
 
-    
 </style>
