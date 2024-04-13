@@ -12,9 +12,10 @@ const projects = (await getCollection('projects'));
     <div class="proyects__content">
         {
             projects.map(project => (
-                <Project image={project.data.heroImage}  title={project.data.title} slug={`projects/${project.slug}`}/>
+                <Project image={project.data.heroImage}  title={project.data.title} slug={`projects/${project.slug}`} transition={project.data.title}/>
             ))
         }
+        <a class="large__button" href="projects">View More</a>
     </div>
 </section>
 
@@ -35,7 +36,7 @@ const projects = (await getCollection('projects'));
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: 40% 35% 25%;
-        gap: 1rem;
+        gap: 0rem;
         justify-items: stretch;
         align-items: stretch;
         
@@ -65,7 +66,7 @@ const projects = (await getCollection('projects'));
         .proyects__content {
             width: calc(100% - 0.15rem);
             grid-template-columns: 50% 50%;
-            grid-template-rows: 55% 45%;
+            grid-template-rows: 45% 40% 5%;
             gap: 0.2rem;
             justify-items: stretch;
             align-items: stretch;

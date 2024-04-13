@@ -3,6 +3,8 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import TextureFilter from '../components/TextureFilter.astro';
 
 type Props = CollectionEntry<'projects'>['data'];
 
@@ -13,32 +15,89 @@ const { title, description, updatedDate, heroImage } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+		
 	</head>
 
 	<body>
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+		<Header title="ARIMA" date="2024" subtitle="software engineering"/>
+		<main class="newspaper">
+			<section class="newspaper__main">
+				<div class="newspaper__main__image" id="newspaper__main__image">
+					<TextureFilter src={heroImage} transition=`projects-${title}` />
 				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
-					<slot />
+				<div class="newspaper__main__about">
+					<h1 class="newspaper__main__about__title"> { title } </h1>
+					<p class="newspaper__main__about__description"> { description } </p>
+					<a href="https://github.com/arimakey" class="large__button large__button--transparent" target="_blank">
+						<ion-icon name="logo-github"></ion-icon>
+						Github
+					</a>
 				</div>
-			</article>
+			</section>
+			<section class="newspaper__secundary">
+				<div>
+
+				</div>
+
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+.newspaper__main {
+    display: flex;
+    flex-direction: row;
+	align-items: stretch;
+    width: calc(100% - 1rem);
+    gap: 1rem;
+}
+
+.newspaper__main__image {
+    display: block;
+	width: 75%; 
+	flex-shrink: 1;
+	
+    overflow: hidden;
+	min-width: 0;
+}
+
+.newspaper__main__about {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;;
+    width: 25%;
+	gap: 1rem;
+	height: fit-content;
+}
+
+
+.newspaper__main__about__title {
+	font-size: 36px;
+	text-align: center;
+	font-weight: 400;
+}
+
+.newspaper__main__about__description {
+	font-size: 18px;
+	line-height: 1.25;
+	color: var(--secundary-text);
+	text-align: justify;
+	hyphens: auto;
+}
+</style>
+
+<script>
+    const elements = document.getElementsByClassName('newspaper__main__about');
+    if (elements.length > 0) {
+        const element = elements[0];
+        const altura = element.offsetHeight;
+
+        var newspaper__main__image = document.getElementById('newspaper__main__image');
+        newspaper__main__image.style.height = (altura + 25	) + "px"; // Agregar la unidad 'px'
+    } else {
+        console.log("No se encontraron elementos con la clase 'newspaper__main__about'");
+    }
+</script>

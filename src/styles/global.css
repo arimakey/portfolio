@@ -110,3 +110,8 @@ ul {
 	background: none;
 	color: var(--primary-text);
 }
+
+img {
+	height: 100%;
+	width: 100%;
+}

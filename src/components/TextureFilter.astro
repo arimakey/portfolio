@@ -1,10 +1,10 @@
 ---
     import { Image } from "astro:assets";
-    const { src, alt } = Astro.props;
+    const { src, alt, transition = "" } = Astro.props;
 ---
 
 
-<div class="texture-filter">
+<div class="texture-filter" transition:name={transition}  >
     <div class="color-filter gradient-background">
         <img class="image" src={src} alt="">
     </div>

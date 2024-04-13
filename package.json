@@ -14,5 +14,8 @@
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.1",
     "astro": "^4.4.15"
+  },
+  "devDependencies": {
+    "astro-icon": "^1.1.0"
   }
 }

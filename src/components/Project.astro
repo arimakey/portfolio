@@ -6,7 +6,7 @@ const { image, title="soon", slug="projects", page, github } = Astro.props;
 <article class="proyect_content_element">
     <a href={slug}>
         <div class=" proyect_content_element__image">
-            <TextureFilter src={image}/>
+            <TextureFilter src={image} transition=`projects-${title}`/>
         </div>
         <div>
             <h4 class="proyect_content_element__title">{ title }</h4>
@@ -70,7 +70,7 @@ const { image, title="soon", slug="projects", page, github } = Astro.props;
     }
     @media only screen and (min-width: 768px) {
         .proyect_content_element:first-child {
-            grid-row: span 2;   
+            grid-row: span 3;   
         }
     }
 </style>
