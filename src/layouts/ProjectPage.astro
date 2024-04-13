@@ -5,10 +5,22 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import TextureFilter from '../components/TextureFilter.astro';
+import { Icon } from 'astro-icon/components'
 
 type Props = CollectionEntry<'projects'>['data'];
 
-const { title, description, updatedDate, heroImage } = Astro.props;
+const { 
+	title, 
+	description, 
+	pubDate, 
+	heroImage, 
+	secondImage, 
+	title_second_section, 
+	content_second_section, 
+	title_third_section, 
+	content_third_section, 
+	tecnologies 
+} = Astro.props;
 
 ---
 
@@ -26,8 +38,10 @@ const { title, description, updatedDate, heroImage } = Astro.props;
 					<TextureFilter src={heroImage} transition=`projects-${title}` />
 				</div>
 				<div class="newspaper__main__about">
-					<h1 class="newspaper__main__about__title"> { title } </h1>
-					<p class="newspaper__main__about__description"> { description } </p>
+					<div>
+						<h1 class="newspaper__title"> { title } </h1>
+						<p class="newspaper__description"> { description } </p>
+					</div>
 					<a href="https://github.com/arimakey" class="large__button large__button--transparent" target="_blank">
 						<ion-icon name="logo-github"></ion-icon>
 						Github
@@ -35,10 +49,40 @@ const { title, description, updatedDate, heroImage } = Astro.props;
 				</div>
 			</section>
 			<section class="newspaper__secundary">
-				<div>
-
+				<article class="newspaper__secundary__article">
+					<div class="newspaper__secundary__article__data">
+						<h1 class="newspaper__title"> { title_second_section } </h1>
+						<p class="newspaper__description"> { content_second_section }  </p>
+					</div>
+					<div class="newspaper__secundary__article__image">
+						<TextureFilter src={secondImage} 	/>
+						<ul class="newspaper__secundary__article__image__icon">
+							{
+								tecnologies?.map(tecnologie => (
+									<li class="glow_icon"><Icon name={tecnologie} /></li>
+								))
+							}
+						</ul>
+					</div>
+				</article>
+				<div class="newspaper__secundary__aditional">
+					<div class="newspaper__secundary__aditiona__block">
+						<h1 class="newspaper__title"> { title_third_section } </h1>
+						<ul>
+							{
+								!!content_third_section && content_third_section.map( contenido => (
+									<li>{ contenido }</li>
+								))
+							}
+						</ul>
+					</div>
+					<div>
+						<h1 class="newspaper__title"> La necesidad de automatizar el proceso </h1>
+						<p class="newspaper__description"> Hello! I'm Arima, a passionate software engineering student with a particular interest in the world of ethical hacking and computer security. My goal is to explore the complexities of cyberspace and contribute to a safer and more robust online environment.
+							Hello! I'm Arima, a passionate software engineering student with a particular interest in the world of ethical hacking and computer security. 
+							Hello!  </p>
+					</div>
 				</div>
-
 			</section>
 		</main>
 		<Footer />
@@ -46,6 +90,11 @@ const { title, description, updatedDate, heroImage } = Astro.props;
 </html>
 
 <style>
+.newspaper {
+	display: flex;
+	flex-direction: column;
+	gap:4rem;
+}
 .newspaper__main {
     display: flex;
 	flex-direction: column;
@@ -65,8 +114,7 @@ const { title, description, updatedDate, heroImage } = Astro.props;
 
 .newspaper__main__about {
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	flex-direction: column;
 
     width: 100%;
@@ -75,13 +123,14 @@ const { title, description, updatedDate, heroImage } = Astro.props;
 }
 
 
-.newspaper__main__about__title {
+.newspaper__title {
 	font-size: 36px;
 	text-align: center;
 	font-weight: 400;
+	margin-bottom: 1rem
 }
 
-.newspaper__main__about__description {
+.newspaper__description {
 	font-size: 18px;
 	line-height: 1.25;
 	color: var(--secundary-text);
@@ -89,6 +138,54 @@ const { title, description, updatedDate, heroImage } = Astro.props;
 	hyphens: auto;
 }
 
+.newspaper__secundary {
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+}
+
+.newspaper__secundary__article {
+	display: flex;
+	flex-direction: row;
+	width: 45%;
+	gap: 1rem;
+}
+
+.newspaper__secundary__aditional {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;	
+	width: 55%;
+}
+
+.newspaper__secundary__article__data {
+	width: 60%;
+	
+}
+.newspaper__secundary__article__data  h1 {
+	text-align: left;
+}
+.newspaper__secundary__article__image {
+	width: 35%;
+	position: relative;
+}
+.newspaper__secundary__article__image__icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.glow_icon {
+	color: var(--contrast-text);
+	filter: drop-shadow(0 0 10px var(--glow-color));
+	font-size: 2.5rem;
+}
+
+.newspaper__secundary__aditiona__block {
+	padding: 2rem;
+	border: 3px solid var(--primary-color);
+}
 @media only screen and (min-width: 480px) {
 	
 }
@@ -99,6 +196,7 @@ const { title, description, updatedDate, heroImage } = Astro.props;
 	}
 	.newspaper__main__about {
 		width: 25%;
+		height: 24rem;
 	}
 	.newspaper__main__image {
 		width: 75%;
