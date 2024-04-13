@@ -16,7 +16,7 @@ const projects = (await getCollection('projects'));
 				{
 					projects.map((project) => (
 						<li>
-							<a href={`projects/${project.slug}`}>
+							<a href={`${project.slug}`}>
 								<TextureFilter src={project.data.heroImage} transition=`projects-${project.data.title}` />
 							</a>
 						</li>
