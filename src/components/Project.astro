@@ -1,10 +1,10 @@
 ---
 import TextureFilter from "./TextureFilter.astro";
-const { image, title="soon", slug="projects", page, github } = Astro.props;    
+const { image, title="soon", slug="projects" } = Astro.props;    
 ---
 
 <article class="proyect_content_element">
-    <a href={slug}>
+    <a href={slug} >
         <div class=" proyect_content_element__image">
             <TextureFilter src={image} transition=`projects-${title}`/>
         </div>

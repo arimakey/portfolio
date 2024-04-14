@@ -1,9 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
 
-import Project from './Project.astro'
+import Project from './Project.astro';
+import { DEFAULT_PROJECTS } from '../consts'
 
-const projects = (await getCollection('projects'));
+const projects = (await getCollection('projects')).slice(0, 3);
+
+const project_rest = 3 - projects.length;
+
 ---
 <section class="proyects">
     <h3 class="proyects__title">
@@ -12,7 +16,12 @@ const projects = (await getCollection('projects'));
     <div class="proyects__content">
         {
             projects.map(project => (
-                <Project image={project.data.heroImage}  title={project.data.title} slug={`projects/${project.slug}`} transition={project.data.title}/>
+                <Project image={project.data.heroImage}  title={project.data.title} slug={`projects/${project.slug}`} />
+            ))
+        }
+        {
+            DEFAULT_PROJECTS.slice(0, project_rest).map((project_rest, index) => (
+                <Project image={project_rest.heroImage}  title={project_rest.title} slug={null} />
             ))
         }
         <a class="large__button" href="projects">View More</a>
