@@ -81,7 +81,44 @@ ul {
 .icons {
 	font-size: 2.2rem;
 	transition: all 0.25s ease-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 32px;
+	height: 26px;
 }
+
+.icons svg{
+	width: 32px;
+	height: 26px;
+}
+
+
+@media only screen and (min-width: 480px) {
+	.icons {
+		width: 32px;
+		height: 32px;
+	}
+	
+	.icons svg{
+		width: 32px;
+		height: 32px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.icons {
+		width: 40px;
+		height: 40px;
+	}
+
+	.icons svg{
+		width: 40px;
+		height: 40px;
+	}
+}
+
+
 
 .icons:hover {
 	transform: translateY(-10px) scale(1.1);

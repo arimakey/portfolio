@@ -13,8 +13,7 @@
     "@astrojs/mdx": "^2.1.1",
     "@astrojs/rss": "^4.0.5",
     "@astrojs/sitemap": "^3.1.1",
-    "astro": "^4.4.15"
-  },
-  "devDependencies": {
+    "astro": "^4.4.15",
+    "boxicons": "^2.1.4"
   }
 }

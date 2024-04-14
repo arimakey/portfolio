@@ -4,78 +4,11 @@ import '../../styles/global.css'
 
 import ProjectsGrid from '../../components/index/ProjectsGrid.astro'
 import TechnologiesGrid from '../../components/index/TechnologiesGrid.astro'
+import IndexHeader from '../../components/index/IndexHeader.astro'
 
 ---
 <Layout title="Arimakey" description="Portfolio page">
-    <header class="header">
-        <div class="header__description">
-            <article class="header__description__about">
-                <p>Hello! I'm Arima, a passionate software engineering student with a particular interest in the world of ethical hacking and computer security. My goal is to explore the complexities of cyberspace and contribute to a safer and more robust online environment.</p>
-            </article>
-            <div class="header__description__social">
-                <a href="https://www.instagram.com/arima_key" class="large__button" target="_blank">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    Instagram
-                </a>
-                <a href="https://github.com/arimakey" class="large__button large__button--transparent" target="_blank">
-                    <ion-icon name="logo-github"></ion-icon>
-                    Github
-                </a>
-            </div>
-        </div>
-        <style>
-            .header__description {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                gap: 2rem;
-            }
-
-            .header__description__social {
-                width: 64rem;
-                display: flex;
-                flex-direction: row;
-                gap: 12px;
-                width: 100%;
-            }
-
-            .header__description__about {
-                font-size: 16px;
-                padding-right: 0rem;
-                line-height: 1.5;
-                color: var(--secundary-text);
-            }
-
-            @media only screen and (min-width: 480px) {
-                .header__description {
-                    gap: 1rem;
-                }
-
-                .header__description__social {
-                    width: 100%;
-                    flex-direction: column;
-                }
-
-                .header__description__about {
-                    font-size: 18px;
-                    padding-right: 1rem;
-                }
-            }
-
-            @media only screen and (min-width: 768px) {
-                .header__description__social {
-                    min-width: 15rem;
-                    max-width: 15rem;
-                }
-
-                .header__description {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                }
-            }
-        </style>     
-    </header>
+    <IndexHeader />
     <TechnologiesGrid />
     <ProjectsGrid />
 </Layout>
