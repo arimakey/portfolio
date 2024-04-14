@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+import TextureFilter from "./TextureFilter.astro";
+const { src, alt="", reverse } = Astro.props
+---
+
+<div>
+    <slot/>
+    {
+        !!src && <TextureFilter src={src} alt={alt} />
+    }
+</div>
+
+<style>
+    h1 {
+        
+    }
+</style>
