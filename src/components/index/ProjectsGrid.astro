@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 
-import Project from './Project.astro';
-import { DEFAULT_PROJECTS } from '../consts'
+import Project from '../Project.astro';
+import { DEFAULT_PROJECTS } from '../../consts'
 
 const projects = (await getCollection('projects')).slice(0, 3);
 

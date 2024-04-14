@@ -1,0 +1,203 @@
+---
+import TextureFilter from '../TextureFilter.astro'
+---
+
+<section class="technologies">
+    <div class="technologies__container">
+        <h3 class="technologies__title">Technologies</h3>
+        <div class="technologies__container__element technologies__container__element--right">
+            <h4 class="technologies__container__element__title">
+                Web
+                <br>
+                <span class="technologies__container__element__title--effect">TECHNOLOGIES</span>
+            </h4>
+            <ul class="technologies__container__element__icons">
+                <li class="icons"><i class="iconify" data-icon="bxl:html5"></i></li>
+                <li class="icons"><i class="iconify" data-icon="bxl:css3"></i></li>
+                <li class="icons"><i class="iconify" data-icon="bxl:javascript"></i></li>
+                <li class="icons"><i class="iconify" data-icon="bxl:tailwind-css"></i></li>
+                <li class="icons"><i class="iconify" data-icon="bxl:react"></i></li>
+                <li class="icons"><i class="iconify" data-icon="ri:nextjs-fill"></i></li>
+                
+            </ul>
+        </div>
+        <div class="technologies__container__element technologies__container__element--left">
+            <h4 class="technologies__container__element__title">
+                Software
+                <br>
+                <span class="technologies__container__element__title--effect">DEPLOYMENT</span>
+            </h4>
+            <ul class="technologies__container__element__icons">
+                <li class="icons"><i class="iconify" data-icon="bxl:c-plus-plus"></i></li>
+                <li class="icons"><i class="iconify" data-icon="bxl:java"></i></li>
+            </ul>
+        </div>
+        <div class="technologies__container__element technologies__container__element--right">
+            <h4 class="technologies__container__element__title">
+                Deployment and
+                <br>
+                <span class="technologies__container__element__title--effect">VERSION CONTROL</span>
+            </h4>
+            <ul class="technologies__container__element__icons">
+                <li class="icons"><i class="iconify" data-icon="bxl:heroku"></i></li>
+                <li class="icons"><i class="iconify" data-icon="bxl:docker"></i></li>
+                <li class="icons"><i class="iconify" data-icon="bxl:git"></i></li>
+                <li class="icons"><i class="iconify" data-icon="bxl:github"></i></li>
+            </ul>
+        </div>
+        <div class="technologies__container__element technologies__container__element--left">
+            <h4 class="technologies__container__element__title">
+                Scripting
+                <br>
+                <span class="technologies__container__element__title--effect">AUTOMATIZATION</span>
+            </h4>
+            <ul class="technologies__container__element__icons">
+                <li class="icons"><i class="iconify" data-icon="codicon:terminal-bash"></i></li>
+            </ul>
+        </div>
+        <hr class="technologies__container__element--end">
+    </div>
+    <div class="technologies__image__container">
+        <TextureFilter src='/resources/images/technologies_image.png' transition="none"/>
+    </div>
+</section>
+
+<style>
+    .technologies {
+        margin: 6rem 0rem;
+    }
+
+    .technologies__title {
+        margin-bottom: 0rem;
+        color: var(--contrast-text);
+        background-color: var(--primary-color);
+        font-size: 1rem;
+        text-align: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .technologies__container {
+        width: 100%;
+    }
+
+    .technologies__image__container {
+        display: none;
+    }
+
+    .technologies__container__element {
+        border-width: 3px 0px 0px 0px;
+        border-color: var(--primary-color);
+        border-style: solid;
+        color: var(--primary-color);
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    
+    .technologies__container__element--right {
+        border-width: 3px 3px 0px 0px;
+    }
+
+    .technologies__container__element--left {
+        flex-direction: row-reverse;
+        text-align: end;
+        border-width: 3px 0px 0px 3px;
+    }
+
+    .technologies__container__element--end {
+        margin: 0rem;
+        height: 1px;
+    }
+
+    .technologies__container__element__icons {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(1rem, 1.5rem));
+        grid-auto-flow: row;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 12px;
+    }
+
+
+
+    .technologies__container__element__title {
+        align-self: center;
+        font-size: 1.2rem;
+        font-family: "Rosario", sans-serif;
+        font-style: italic;
+    }
+
+    .technologies__container__element__title--effect {
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-style: normal;
+        font-weight: 900;
+    }
+    .icons {
+        font-size: 1.6rem;
+    }
+
+
+    @media only screen and (min-width: 540px) {
+        .technologies__title {
+            width: 100%;
+            font-size: 1.5rem;
+        }
+        
+        .technologies__container__element__title {
+            font-size: 1.5rem;
+        }
+        .technologies__container__element__icons {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(1rem, 1.5rem));
+            grid-auto-flow: row;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 10px;
+        }
+        .technologies__container__element__icons {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+        .icons {
+            font-size: 2rem;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        .technologies {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem
+        }
+        .technologies__title {
+            padding: 0.8rem;
+            width: 60%;
+            font-size: 1.5rem;
+        }
+        .technologies__container__element__title {
+            font-size: 1.5rem;
+        }
+
+        .technologies__image__container {
+            display: block;
+            width: 239px;
+            height: 465px;
+            overflow: hidden;
+        }
+
+        .technologies__image {
+            max-height: 100%;
+            overflow: hidden;
+            clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100%, 100%, 80%, 20%) ;
+        }
+
+        .technologies__container {
+            width: 80%;
+        }
+        .icons {
+            font-size: 2.5rem;
+        }
+    }
+</style>
