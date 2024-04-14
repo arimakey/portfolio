@@ -3,7 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/layout/Metadata.astro';
 import Footer from '../components/layout/Footer.astro';
 import Header from '../components/layout/Header.astro';
-import TextureFilter from '../components/TextureFilter.astro';
+import NewspaperHeader from '../components/newspaper/NewspaperHeader.astro';
 import NewsPaper from '../components/newspaper/NewsPaper.astro';
 
 type Props = CollectionEntry<'projects'>['data'];
@@ -25,21 +25,7 @@ const {
 
 	<body>
 		<Header title="ARIMA" date="2024" subtitle="software engineering"/>
-		<header>
-			<div>
-				<TextureFilter src={heroImage} transition=`projects-${title}` />
-			</div>
-			<div>
-				<div>
-					<h1> { title } </h1>
-					<p> { description } </p>
-				</div>
-				<a href="https://github.com/arimakey" class="large__button large__button--transparent" target="_blank">
-					<ion-icon name="logo-github"></ion-icon>
-					Github
-				</a>
-			</div>
-		</header>
+		<NewspaperHeader title={title} image={heroImage} description={description}>
 
 		<main>
 			<NewsPaper>

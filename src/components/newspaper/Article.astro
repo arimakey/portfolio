@@ -5,7 +5,7 @@ const { src, alt="", reverse } = Astro.props
 
 ---
 
-<div>
+<div class="article">
     <slot/>
     {
         !!src && <TextureFilter src={src} alt={alt} />
@@ -14,6 +14,11 @@ const { src, alt="", reverse } = Astro.props
 
 <style>
     h1 {
-        
+        font-size: small;
+    }
+
+    article {
+        display: flex;
+        flex-direction: row;
     }
 </style>
