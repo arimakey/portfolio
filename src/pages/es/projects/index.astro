@@ -7,7 +7,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../../consts';
 import { getCollection } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
 
-const projects = (await getCollection('projects'));
+const projects = await getCollection('projects', ({ id }) => { return id.startsWith('es/') })
 
 console.log(projects)
 ---

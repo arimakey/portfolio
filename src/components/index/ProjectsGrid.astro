@@ -7,12 +7,10 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 import Project from '../Project.astro';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
-const projects = (await getCollection('projects')).slice(0, 3);
-const project_rest = 3 - projects.length;
-
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 
+const projects = (await getCollection('projects', ({ id }) => { return id.startsWith(lang) })).slice(0, 3);
+const project_rest = 3 - projects.length;
 ---
 <section class="proyects">
     <h3 class="proyects__title">
@@ -29,7 +27,7 @@ const t = useTranslations(lang);
                 <Project image={project_rest.heroImage}  title={project_rest.title} slug={null} />
             ))
         }
-        <a class="large__button" href=`/${lang}/projects`>View More</a>
+        <a class="large__button" href={getRelativeLocaleUrl(lang, "/projects")}>View More</a>
     </div>
 </section>
 
