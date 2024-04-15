@@ -6,24 +6,22 @@ import TextureFilter from '../../components/TextureFilter.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import Cards from '../../components/Cards.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getLangFromUrl } from '../../i18n/utils';
 
 const projects = await getCollection('projects', ({ id }) => { return id.startsWith('en/') })
+const lang = getLangFromUrl(Astro.url);
 
 ---
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<main>
-		<section >
-			<ul class="project__grid">
-				{
-					projects.map((project) => (
-						<li>
-							<a href={`${project.slug}`}>
-								<TextureFilter src={project.data.heroImage} transition=`projects-${project.data.title}` />
-							</a>
-						</li>
-					))
-				}
-			</ul>
+		<section class="project__grid">
+			{
+				projects.map((project) => (
+					<Cards title={ project.data.title } content={ project.data.description } img={ project.data.heroImage } slug={ getRelativeLocaleUrl(lang, `/projects/${project.slug.split('/')[1]}`) }/>
+				))
+			}
 		</section>
 	</main>
 </Layout>

@@ -1,0 +1,29 @@
+---
+import TextureFilter from "./TextureFilter.astro"
+const { title, content, img, slug } = Astro.props
+
+---
+<a class="card" href={ slug }>
+    <h1>{ title }</h1>
+    <div class="truncate">
+        <p> { content }</p>
+    </div>
+    <TextureFilter src={ img } transition=`projects-${title}`}/>
+</a>
+
+
+<style>
+    .card {
+        height: 24rem;
+    }
+
+    .truncate {
+        text-overflow: ellipsis;
+        height: 7rem;   
+    }
+
+    h1 {
+        text-align: center;
+    }
+    
+</style>

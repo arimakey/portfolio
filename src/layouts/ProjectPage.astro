@@ -6,7 +6,7 @@ import TopHeader from '../components/layout/TopHeader.astro';
 import NewspaperHeader from '../components/newspaper/NewspaperHeader.astro';
 import NewsPaper from '../components/newspaper/NewsPaper.astro';
 import { getLangFromUrl } from '../i18n/utils';
-
+import "../styles/newspaper.css"
 type Props = CollectionEntry<'projects'>['data'];
 
 const { 
@@ -28,13 +28,12 @@ const lang = getLangFromUrl(Astro.url);
 
 	<body>
 		<TopHeader title="ARIMA" date="2024" subtitle="software engineering"/>
-		<NewspaperHeader title={title} image={heroImage} description={description}>
+		<NewspaperHeader title={title} image={heroImage} description={description} />
 
-		<main>
-			<NewsPaper>
-				<slot />
-			</NewsPaper>
-		</main>
+		<NewsPaper>
+			<slot />
+		</NewsPaper>
+
 		<Footer />
 	</body>
 </html>

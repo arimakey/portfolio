@@ -88,41 +88,15 @@ ul {
 	height: 26px;
 }
 
-.icons svg{
-	width: 32px;
-	height: 26px;
-}
-
-
-@media only screen and (min-width: 480px) {
-	.icons {
-		width: 32px;
-		height: 32px;
-	}
-	
-	.icons svg{
-		width: 32px;
-		height: 32px;
-	}
-}
-
-@media only screen and (min-width: 768px) {
-	.icons {
-		width: 40px;
-		height: 40px;
-	}
-
-	.icons svg{
-		width: 40px;
-		height: 40px;
-	}
+p, li {
+	font-size: 16px;
+	padding-right: 0rem;
+	line-height: 1.5;
+	color: var(--secundary-text);
 }
 
 
 
-.icons:hover {
-	transform: translateY(-10px) scale(1.1);
-}
 
 
 .large__button {
@@ -151,4 +125,61 @@ ul {
 img {
 	height: 100%;
 	width: 100%;
+}
+
+ul {
+	margin: 1rem;
+}
+
+li {
+	list-style-type: disc;
+
+
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+}
+
+
+@media only screen and (min-width: 480px) {
+	.icons {
+		width: 32px;
+		height: 32px;
+	}
+	
+	.icons svg{
+		width: 32px;
+		height: 32px;
+	}
+
+	p {
+		font-size: 18px;
+		padding-right: 1rem;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.icons {
+		width: 40px;
+		height: 40px;
+	}
+
+	.icons svg{
+		width: 40px;
+		height: 40px;
+	}
+}
+
+
+
+.icons:hover {
+	transform: translateY(-10px) scale(1.1);
+}
+
+
+h1 {
+	font-size: xx-large;
+	margin: 0rem 0rem 1rem 0rem;
 }
