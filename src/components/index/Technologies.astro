@@ -1,5 +1,7 @@
 ---
-    const { first_title, second_title, icons, direction="left"} = Astro.props;
+import { Icon } from 'astro-icon/components'
+
+const { first_title, second_title, icons, direction="left"} = Astro.props;
 ---
 
 <div class=`technology  technology--${direction}`>
@@ -10,7 +12,7 @@
     </h4>
     <ul class="technology__icons">
         {
-            !!icons && icons.map(icon =>( <li class="icons"><i class="iconify" data-icon="bxl:java"></i></li> ))
+            !!icons && icons.map(icon =>( <li class="icons"><Icon name={icon}></Icon></li> ))
         }
     </ul>
 </div>
