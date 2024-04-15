@@ -86,6 +86,7 @@ ul {
 	align-items: center;
 	width: 32px;
 	height: 26px;
+	color: var(--primary-color);
 }
 
 p, li {
