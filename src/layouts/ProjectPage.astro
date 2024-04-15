@@ -5,6 +5,7 @@ import Footer from '../components/layout/Footer.astro';
 import TopHeader from '../components/layout/TopHeader.astro';
 import NewspaperHeader from '../components/newspaper/NewspaperHeader.astro';
 import NewsPaper from '../components/newspaper/NewsPaper.astro';
+import { getLangFromUrl } from '../i18n/utils';
 
 type Props = CollectionEntry<'projects'>['data'];
 
@@ -15,11 +16,13 @@ const {
 	heroImage,
 } = Astro.props;
 
+const lang = getLangFromUrl(Astro.url);
+
 ---
 
-<html lang="en">
+<html lang={ lang }>
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={heroImage}/>
 		
 	</head>
 

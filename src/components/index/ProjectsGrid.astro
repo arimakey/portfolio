@@ -1,12 +1,17 @@
 ---
 import { getCollection } from 'astro:content';
-
-import Project from '../Project.astro';
 import { DEFAULT_PROJECTS } from '../../consts'
 
-const projects = (await getCollection('projects')).slice(0, 3);
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
+import Project from '../Project.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const projects = (await getCollection('projects')).slice(0, 3);
 const project_rest = 3 - projects.length;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 ---
 <section class="proyects">
@@ -16,7 +21,7 @@ const project_rest = 3 - projects.length;
     <div class="proyects__content">
         {
             projects.map(project => (
-                <Project image={project.data.heroImage}  title={project.data.title} slug={`projects/${project.slug}`} />
+                <Project image={project.data.heroImage}  title={project.data.title} slug={getRelativeLocaleUrl(lang, `/projects/${project.slug.split('/')[1]}`)} />
             ))
         }
         {
@@ -24,7 +29,7 @@ const project_rest = 3 - projects.length;
                 <Project image={project_rest.heroImage}  title={project_rest.title} slug={null} />
             ))
         }
-        <a class="large__button" href="projects">View More</a>
+        <a class="large__button" href=`/${lang}/projects`>View More</a>
     </div>
 </section>
 

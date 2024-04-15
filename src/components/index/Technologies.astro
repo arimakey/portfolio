@@ -1,0 +1,135 @@
+---
+    const { first_title, second_title, icons, direction="left"} = Astro.props;
+---
+
+<div class=`technology  technology--${direction}`>
+    <h4 class="technology__title">
+        { first_title }
+        <br>
+        <span class="technology__title--effect">{ second_title }</span>
+    </h4>
+    <ul class="technology__icons">
+        {
+            !!icons && icons.map(icon =>( <li class="icons"><i class="iconify" data-icon="bxl:java"></i></li> ))
+        }
+    </ul>
+</div>
+
+
+
+<style>
+    .technology {
+        border-width: 3px 0px 0px 0px;
+        border-color: var(--primary-color);
+        border-style: solid;
+        color: var(--primary-color);
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    
+    .technology--right {
+        border-width: 3px 3px 0px 0px;
+    }
+
+    .technology--left {
+        flex-direction: row-reverse;
+        text-align: end;
+        border-width: 3px 0px 0px 3px;
+    }
+
+    
+
+    .technology__icons {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(1rem, 1.5rem));
+        grid-auto-flow: row;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 12px;
+    }
+
+
+
+    .technology__title {
+        align-self: center;
+        font-size: 1.2rem;
+        font-family: "Rosario", sans-serif;
+        font-style: italic;
+    }
+
+    .technology__title--effect {
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-style: normal;
+        font-weight: 900;
+    }
+    .icons {
+        font-size: 1.6rem;
+    }
+
+
+    @media only screen and (min-width: 540px) {
+        .technologies__title {
+            width: 100%;
+            font-size: 1.5rem;
+        }
+        
+        .technology__title {
+            font-size: 1.5rem;
+        }
+        .technology__icons {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(1rem, 1.5rem));
+            grid-auto-flow: row;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 10px;
+        }
+        .technology__icons {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+        .icons {
+            font-size: 2rem;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        .technologies {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem
+        }
+        .technologies__title {
+            padding: 0.8rem;
+            width: 60%;
+            font-size: 1.5rem;
+        }
+        .technology__title {
+            font-size: 1.5rem;
+        }
+
+        .technologies__image__container {
+            display: block;
+            width: 239px;
+            height: 465px;
+            overflow: hidden;
+        }
+
+        .technologies__image {
+            max-height: 100%;
+            overflow: hidden;
+            clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100%, 100%, 80%, 20%) ;
+        }
+
+        .technologies__container {
+            width: 80%;
+        }
+        .icons {
+            font-size: 2.5rem;
+        }
+    }
+
+</style>
