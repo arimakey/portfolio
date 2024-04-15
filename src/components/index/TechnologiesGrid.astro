@@ -69,10 +69,12 @@ import list_technologies from '../../data/technologies'
         }
 
         .technologies__image__container {
-            display: block;
+            display: flex;
             width: 239px;
-            height: 465px;
+            height: auto;
             overflow: hidden;
+            object-fit: cover;
+            clip-path: polygon(0 0, calc(100% - 1.5rem) 0%, 100% 1.5rem ,  100% 100%, 1.5rem 100%, 0% calc(100% - 1.5rem));
         }
 
         .technologies__container {
