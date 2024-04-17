@@ -17,20 +17,27 @@ const project_rest = 3 - projects.length;
         Projects
     </h3>
     <div class="proyects__content">
-        {
-            projects.map(project => (
-                <Project image={project.data.heroImage}  title={project.data.title} slug={""} />
-            ))
-        }
-        {
-            DEFAULT_PROJECTS.slice(0, project_rest).map((project_rest, index) => (
-                <Project image={project_rest.heroImage}  title={project_rest.title} slug={null} />
-            ))
-        }
+        <div class="proyects__content__container">
+            {
+                projects.map(project => (
+                    <Project image={project.data.heroImage}  title={project.data.title} slug={getRelativeLocaleUrl(lang, `/projects/${project.slug.split('/')[1]}`)} />
+                ))
+            }
+            {
+                DEFAULT_PROJECTS.slice(0, project_rest).map((project_rest, index) => (
+                    <Project image={project_rest.heroImage}  title={project_rest.title} slug={null} />
+                ))
+            }
+        </div>
     </div>
 </section>
 
 <style>
+    .proyects__content {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    
     .proyects__title {
         margin-bottom: 0rem;
         width: 100%;
@@ -41,22 +48,16 @@ const project_rest = 3 - projects.length;
         padding: 0.5rem 0rem;
     }
 
-    .proyects__content {
+    .proyects__content__container {
         width: 100%;
-        
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 40% 35% 25%;
-        gap: 0.5rem;
+        display: flex;
+        width: 300%;
         justify-items: stretch;
         align-items: stretch;
         
-        height: 60rem;
+        height: 25rem;
     }
-    
-    .large__button--view {
-        padding: 1rem;
-    }
+
 
 
     @media only screen and (min-width: 480px) {
@@ -66,12 +67,22 @@ const project_rest = 3 - projects.length;
     }
 
     @media only screen and (min-width: 768px) {
+        .proyects__content {
+            -webkit-overflow-scrolling: touch;
+            overflow: auto;
+        }
+        .scroll-content::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
         .proyects__title {
             font-size: 1.5rem;
             padding: 1rem 0rem;
         }
         
-        .proyects__content {
+        .proyects__content__container {
+            display: grid;
             width: calc(100%);
             grid-template-columns: 50% 50%;
             grid-template-rows: 53% 40% 0%;
