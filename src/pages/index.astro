@@ -5,10 +5,23 @@ import '../styles/global.css'
 import ProjectsGrid from '../components/index/ProjectsGrid.astro'
 import TechnologiesGrid from '../components/index/TechnologiesGrid.astro'
 import IndexHeader from '../components/index/IndexHeader.astro'
+import PostGrid from '../components/index/PostGrid.astro'
 
 ---
 <Layout title="Arimakey" description="Portfolio page">
-    <IndexHeader />
-    <TechnologiesGrid />
-    <ProjectsGrid />
+    <main>
+        <IndexHeader />
+        <TechnologiesGrid />
+        <ProjectsGrid />
+        <PostGrid />
+    </main>
 </Layout>
+
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+</style>

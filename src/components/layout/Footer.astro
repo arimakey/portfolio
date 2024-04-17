@@ -7,9 +7,7 @@
 	<div class="footer__main">
 		&copy; {today.getFullYear()} Created by Arimakey.
 		<div class="footer__main__redes">
-			<ul>
-				<li><i class="iconify" data-icon="ri:nextjs-fill"></i> Arimakey</li>	
-			</ul>
+			Arimakey
 		</div>
 	</div>
 </footer>
@@ -20,10 +18,19 @@
 
 	.footer__main {
 		align-items: center;
-		padding: 0rem 2rem;
+		padding: 0rem 0rem;
+		
 		font-size: 1rem;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 	}
+
+	@media only screen and (min-width: 768px) {
+		.footer__main {
+			padding: 0rem 2rem;
+			font-size: 1rem;
+		}
+	}
+
 </style>

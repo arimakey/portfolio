@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap');
 
 
-
 * {
     margin: 0;
     padding: 0;
@@ -156,10 +155,7 @@ li {
 		height: 32px;
 	}
 
-	p {
-		font-size: 18px;
-		padding-right: 1rem;
-	}
+	
 }
 
 @media only screen and (min-width: 768px) {

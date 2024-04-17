@@ -1,29 +1,53 @@
 ---
 import TextureFilter from "./TextureFilter.astro"
-const { title, content, img, slug } = Astro.props
+const { title, content, img, slug, on } = Astro.props
 
 ---
-<a class="card" href={ slug }>
-    <h1>{ title }</h1>
-    <div class="truncate">
-        <p> { content }</p>
+<a class=`${on == "true" ? "highlight" : "card"} ` href={ slug }>
+    <div class="card__text">
+        <h1>{ title }</h1>
+        <div class="truncate">
+            <p> { content }</p>
+        </div>
     </div>
-    <TextureFilter src={ img } transition=`projects-${title}`}/>
+    <div class="card__image">
+        <TextureFilter src={ img } transition=`projects-${title}` />
+    </div>
 </a>
 
 
 <style>
     .card {
-        height: 100%;
+        height: auto;
+        border: solid var(--primary-color);
+        border-width: 0.5rem 0rem 0rem 0rem;
+        background-color: var(--secundary-color);
+    }
+
+    .highlight {
+        height: auto;
+        border: solid var(--primary-color);
+        border-width: 0.5rem 0rem 0rem 0rem;
         background-color: var(--third-color);
     }
 
-    .truncate {
-        text-overflow: ellipsis;
-        height: 7rem;   
+
+
+    p {
+        font-size: 14px;
+        height: 4rem;
+        overflow: hidden;
+    }
+
+    .card__text {
+        padding: 1rem;
+    }
+    .card__image {
+        height: 16rem;
     }
 
     h1 {
+        
         text-align: center;
     }
 </style>

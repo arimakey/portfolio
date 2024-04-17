@@ -19,7 +19,7 @@ const project_rest = 3 - projects.length;
     <div class="proyects__content">
         {
             projects.map(project => (
-                <Project image={project.data.heroImage}  title={project.data.title} slug={getRelativeLocaleUrl(lang, `/projects/${project.slug.split('/')[1]}`)} />
+                <Project image={project.data.heroImage}  title={project.data.title} slug={""} />
             ))
         }
         {
@@ -27,7 +27,6 @@ const project_rest = 3 - projects.length;
                 <Project image={project_rest.heroImage}  title={project_rest.title} slug={null} />
             ))
         }
-        <a class="large__button" href={getRelativeLocaleUrl(lang, "/projects")}>View More</a>
     </div>
 </section>
 
@@ -54,14 +53,10 @@ const project_rest = 3 - projects.length;
         
         height: 60rem;
     }
-
-    .large__button--glow {
-        box-shadow: 0 0 20px var(--glow-color);
-        width: 14rem;
-        transition: opacity 0.25s ease-out;
-        opacity: 0;
-    }
     
+    .large__button--view {
+        padding: 1rem;
+    }
 
 
     @media only screen and (min-width: 480px) {
@@ -77,10 +72,10 @@ const project_rest = 3 - projects.length;
         }
         
         .proyects__content {
-            width: calc(100% - 0.15rem);
+            width: calc(100%);
             grid-template-columns: 50% 50%;
-            grid-template-rows: 45% 40% 5%;
-            gap: 0.2rem;
+            grid-template-rows: 53% 40% 0%;
+            gap: 0rem;
             justify-items: stretch;
             align-items: stretch;
             height: 35rem;
