@@ -1,11 +1,16 @@
 ---
 import Cards from "../Cards.astro";
 import posts from "../../data/posts";
+import { Icon } from "astro-icon/components";
 
 ---
 
 <section>
-    <h1> BLOG POST FOR ANYTHING </h1>
+    <h1> 
+        <li class="icons"><Icon name="code"></Icon></li>
+        BLOG POST FOR ANYTHING
+        <li class="icons"><Icon name="code"></Icon></li>
+    </h1>
     <div>
         {
             posts["en"].map((post, index) => (<Cards title={post.title} content={post.description} img={post.img} on={index % 2 == 0 ? "true" : "false"} />))
@@ -15,8 +20,12 @@ import posts from "../../data/posts";
 
 <style>
     h1 {
+        display: flex;
+        justify-content: center;
         text-align: center;
         padding: 1rem 0rem;
+        align-items: center;
+        gap: 3rem;
     }
 
     div {
