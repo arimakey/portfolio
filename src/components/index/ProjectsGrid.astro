@@ -51,14 +51,19 @@ const project_rest = 3 - projects.length;
     .proyects__content__container {
         width: 100%;
         display: flex;
-        width: 300%;
+        width: 280%;
         justify-items: stretch;
         align-items: stretch;
         
         height: 25rem;
     }
 
+    .proyects__content::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
 
+    
 
     @media only screen and (min-width: 480px) {
         .proyects__title {
@@ -71,10 +76,7 @@ const project_rest = 3 - projects.length;
             -webkit-overflow-scrolling: touch;
             overflow: auto;
         }
-        .scroll-content::-webkit-scrollbar {
-            width: 0;
-            height: 0;
-        }
+        
 
         .proyects__title {
             font-size: 1.5rem;
