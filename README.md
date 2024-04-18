@@ -1,6 +1,6 @@
-## Final Proyect
-
-![portfolio](https://i.ibb.co/yQtXK1n/Desktop-5.png)
+## Free Portfolio
+Este proyecto es un portfolio digital que se inspira en la estética de los periódicos antiguos. 
+![portfolio](https://raw.githubusercontent.com/ArimaKey/portfolio/main/public/full_page.jpg)
 
 
 ## Project Structure
@@ -9,11 +9,19 @@ Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 ├── public/
+│   └── resources/images
 ├── src/
-│   ├── components/
+│   └── components/
+│   │   ├── index/
+│   │   └── layout/
 │   ├── content/
+│   │   ├── blog/
+│   │   └── projects/
+│   ├── data/
+│   ├── i18n/
+│   ├── icons/
 │   ├── layouts/
-│   ├── resources/
+│   ├── styles/
 │   └── pages/
 │       ├── en/
 │       └── es/
@@ -32,5 +40,5 @@ All commands are run from the root of the project, from a terminal:
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run build`           | Build your production site                       |
 | `npm run preview`         | Preview your build locally, before deploying     |
