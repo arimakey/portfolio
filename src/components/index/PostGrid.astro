@@ -1,19 +1,24 @@
 ---
 import Cards from "../Cards.astro";
-import posts from "../../data/posts";
-import { Icon } from "astro-icon/components";
 
+import { getCollection } from 'astro:content';
+import { getLangFromUrl } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+
+const posts = (await getCollection('blog', ({ id }) => { return id.startsWith(lang) })).slice(0, 3);
+console.log(posts)
 ---
 
 <section>
-    <h1> 
-        <li class="icons"><Icon name="code"></Icon></li>
+    <h1>
+        <hr>
         BLOG POST FOR ANYTHING
-        <li class="icons"><Icon name="code"></Icon></li>
+        <hr>
     </h1>
     <div>
         {
-            posts["en"].map((post, index) => (<Cards title={post.title} content={post.description} img={post.img} on={index % 2 == 0 ? "true" : "false"} />))
+            posts.map((post, index) => (<Cards title={post.data.title} content={post.data.description} img={post.data.img} on={index % 2 == 0 ? "true" : "false"} />))
         }
     </div>
 </section>
@@ -21,11 +26,14 @@ import { Icon } from "astro-icon/components";
 <style>
     h1 {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         text-align: center;
         padding: 1rem 0rem;
         align-items: center;
-        gap: 3rem;
+    }
+    
+    hr {
+        width: 30%;
     }
 
     div {
