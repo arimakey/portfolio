@@ -7,7 +7,6 @@ import { getLangFromUrl } from '../../i18n/utils';
 const lang = getLangFromUrl(Astro.url);
 
 const posts = (await getCollection('blog', ({ id }) => { return id.startsWith(lang) })).slice(0, 3);
-console.log(posts)
 ---
 
 <section>
