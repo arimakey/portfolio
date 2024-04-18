@@ -27,7 +27,7 @@ const { first_title, second_title, icons, direction="left"} = Astro.props;
         color: var(--primary-color);
         display: flex;
         justify-content: space-between;
-        padding: 1rem;
+        padding: 0.25rem;
     }
     
     .technology--right {
@@ -71,6 +71,10 @@ const { first_title, second_title, icons, direction="left"} = Astro.props;
 
 
     @media only screen and (min-width: 540px) {
+        .technology {
+            padding: 0.8rem;
+        }
+
         .technologies__title {
             width: 100%;
             font-size: 1.5rem;
@@ -99,6 +103,10 @@ const { first_title, second_title, icons, direction="left"} = Astro.props;
     }
 
     @media only screen and (min-width: 768px) {
+        .technology {
+            padding: 1rem;
+        }
+
         .technologies {
             display: flex;
             flex-direction: row;
