@@ -12,12 +12,12 @@ const lang = getLangFromUrl(Astro.url);
 const projects = (await getCollection('projects', ({ id }) => { return id.startsWith(lang) })).slice(0, 3);
 const project_rest = 3 - projects.length;
 ---
-<section class="proyects">
-    <h3 class="proyects__title">
+<section class="project">
+    <h3 class="project__title">
         Projects
     </h3>
-    <div class="proyects__content">
-        <div class="proyects__content__container">
+    <div class="project__content">
+        <div class="project__content__container">
             {
                 projects.map(project => (
                     <Project image={project.data.heroImage}  title={project.data.title} slug={project.data.link} />
@@ -33,12 +33,12 @@ const project_rest = 3 - projects.length;
 </section>
 
 <style>
-    .proyects__content {
+    .project__content {
         overflow-x: scroll;
         -webkit-overflow-scrolling: touch;
     }
     
-    .proyects__title {
+    .project__title {
         margin-bottom: 0rem;
         width: 100%;
         color: var(--contrast-text);
@@ -48,7 +48,7 @@ const project_rest = 3 - projects.length;
         padding: 0.5rem 0rem;
     }
 
-    .proyects__content__container {
+    .project__content__container {
         width: 100%;
         display: flex;
         width: 280%;
@@ -58,7 +58,7 @@ const project_rest = 3 - projects.length;
         height: 25rem;
     }
 
-    .proyects__content::-webkit-scrollbar {
+    .project__content::-webkit-scrollbar {
         width: 0;
         height: 0;
     }
@@ -66,24 +66,24 @@ const project_rest = 3 - projects.length;
     
 
     @media only screen and (min-width: 480px) {
-        .proyects__title {
+        .project__title {
             font-size: 1.5rem;
         }
     }
 
     @media only screen and (min-width: 768px) {
-        .proyects__content {
+        .project__content {
             -webkit-overflow-scrolling: touch;
             overflow: auto;
         }
         
 
-        .proyects__title {
+        .project__title {
             font-size: 1.5rem;
             padding: 1rem 0rem;
         }
         
-        .proyects__content__container {
+        .project__content__container {
             display: grid;
             width: calc(100%);
             grid-template-columns: 50% 50%;

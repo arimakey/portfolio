@@ -7,10 +7,10 @@ export const SITE_DESCRIPTION = 'Welcome to my website!';
 export const DEFAULT_PROJECTS = [
     {
         title: 'TOO SOON',
-        heroImage: '/resources/images/soon_proyect_0.gif'
+        heroImage: '/resources/images/soon_project_0.gif'
     },
     {
         title: 'SOON',
-        heroImage: '/resources/images/soon_proyect_1.gif'
+        heroImage: '/resources/images/soon_project_1.gif'
     }
 ]
