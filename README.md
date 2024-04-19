@@ -1,5 +1,7 @@
 # Free Portfolio
-Este proyecto es un portfolio digital que se inspira en la estética de los periódicos antiguos. 
+This project is a digital portfolio inspired by the aesthetics of old newspapers. Feel free to fork it and use it as your personal portfolio. Your contribution is also welcomed freely.
+
+
 ![portfolio](https://raw.githubusercontent.com/ArimaKey/portfolio/main/public/full_page.jpg)
 
 
