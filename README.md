@@ -25,7 +25,7 @@ This project is set up for deployment on GitHub. Please review the `deploy.yml` 
 
 ```javascript
   export default defineConfig({
-    site: 'https://astronaut.github.io',
+    site: 'https://<USERNAME>.github.io',
     base: 'my-repo',
   })
 ```
