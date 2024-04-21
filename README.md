@@ -1,13 +1,7 @@
 # Free Portfolio
 This project is a digital portfolio inspired by the aesthetics of old newspapers. Feel free to fork it and use it as your personal portfolio. Your contribution is also welcomed freely.
 
-
-![portfolio](https://raw.githubusercontent.com/ArimaKey/portfolio/main/public/full_page.jpg)
-
-
 ## Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 ├── public/
@@ -32,11 +26,12 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── package.json
 └── tsconfig.json
 ```
+## Project Images
+
+![portfolio](https://raw.githubusercontent.com/ArimaKey/portfolio/main/public/full_page.jpg)
 
 
 ## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
