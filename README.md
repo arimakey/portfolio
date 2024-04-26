@@ -11,12 +11,12 @@ Check out a demo on this page: https://arimakey.github.io/portfolio/
 Para instalar las dependencias necesarias usar:
 To install dependencies, use:
 ```bash
-    npm install
+npm install
 ```
     
 To run the development server, use:
 ```bash
-    npm run dev
+npm run dev
 ```
 
 ## Deployment
