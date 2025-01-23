@@ -7,7 +7,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://arimakey.github.io',
-  base: 'portfolio',
+  base: 'open-portfolio',
   trailingSlash: 'never',
   output: 'static',
   integrations: [mdx(), sitemap(), icon()],
