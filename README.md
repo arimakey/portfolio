@@ -6,7 +6,7 @@ This project is a digital portfolio inspired by the aesthetics of old newspapers
 ![portfolio](https://raw.githubusercontent.com/ArimaKey/portfolio/main/public/full_page.jpg)
 
 ## Demo
-Check out a demo on this page: https://arimakey.github.io/portfolio/
+Check out a demo on this page: https://arimakey.github.io/open-portfolio/
 
 ## Installation
 
